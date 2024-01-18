@@ -250,7 +250,7 @@ body::-webkit-scrollbar-thumb {
     font-weight: 400;
 }
 
-.habilidades-container #text {
+#text-1 {
     color: #FFF;
     text-align: justify;
     font-family: Advent Pro;
@@ -293,7 +293,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .projetos-header {
-    background-color: #131313;
+    background-color: #130427;
 }
 
 .projetos-header #title {
@@ -448,7 +448,7 @@ body::-webkit-scrollbar-thumb {
 
 #sobre-mim {
     padding: 80px 0px;
-    background-color: #131313;
+    background-color: #130427;
 }
 
 #habilidades {

@@ -86,3 +86,15 @@ function copiarEmailParaAreaTransferencia(event) {
         mensagemCard.style.display = "none";
     }, 1500);
 }
+
+// script para alterar o texto ao passar o mouse pela imegem das habilidades
+var originalText = document.getElementById('text-1').innerHTML;
+
+function changeText(element) {
+    var newText = element.getAttribute('data-text');
+    document.getElementById('text-1').innerHTML = newText;
+}
+
+function restoreText() {
+    document.getElementById('text-1').innerHTML = originalText;
+}
