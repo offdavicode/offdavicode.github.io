@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     margin: 0px;
@@ -6,40 +6,36 @@
 }
 
 body {
-    background-color: rgba(14, 0, 33, 1);
+    background-color: #0f0122;
 }
 
 .navbar-group {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 10vh;
-    background-color: black;
+    margin: 0 138px;
 }
 
-.navbar-group img {
-    margin-right: 286px;
-}
 
 .language {
     position: relative;
-    width: 120px;
-    margin-left: 40px;
-    font-weight: bold;
+    width: 110px;
 }
 
 .language-selected {
+    margin-left: 8px;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    color: #ffffff;
-    cursor: pointer;
+    gap: 8px;
 }
 
 .language-selected:before {
     content: "";
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background-image: url(/components/logo-brasil.png);
     background-size: contain;
     background-repeat: 10px;
@@ -47,34 +43,47 @@ body {
 
 .language ul {
     position: absolute;
-    width: 140px;
     border-radius: 0px 0px 10px 10px;
-    border-right: 1px solid rgba(73, 1, 165, 1.00);
-    border-bottom: 1px solid rgba(73, 1, 165, 1.00);
-    border-left: 1px solid rgba(73, 1, 165, 1.00);
+    border-right: 1px solid #4400ff;
+    border-bottom: 1px solid #4400ff;
+    border-left: 1px solid #4400ff;
     background: linear-gradient(0deg, #180039 32.29%, #000 93.41%);
     padding-top: 10px;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.5);
     display: n;
 }
 
-.language ul li {
+.language li a {
     list-style: none;
-}
-
-.language ul li a {
     text-decoration: none;
     display: block;
     color: #FFF;
-    text-align: center;
     font-family: Kanit;
     font-size: 14px;
     font-weight: 275;
-    text-transform: capitalize;
-    padding-top: 5px 10px;
+    padding: 5px;
 }
 
-.language ul li a.US:hover::before {
+.language a:hover::before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.language a.BR:hover {
+    background-color: #4400ff;
+}
+
+.language a.US.english:hover {
+    background-color: #4400ff;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.language a:before {
     content: '';
     display: inline-block;
     width: 25px;
@@ -83,27 +92,7 @@ body {
     background-repeat: no-repeat;
     vertical-align: middle;
     margin-right: 10px;
-    border-radius: 0px 0px 10px 10px; /* Aplica o border-radius ao contêiner do pseudoelemento */
-}
-.language ul li:hover {
 
-    background-color: rgba(73, 1, 165, 1);
-}
-
-
-
-
-
-
-.language ul li a:before {
-    content: '';
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    vertical-align: middle;
-    margin-right: 10px;
 }
 
 a.BR::before {
@@ -111,11 +100,11 @@ a.BR::before {
 }
 
 a.US::before {
-    background-image: url(/components/logo-eua.avif);
+    background-image: url(/components/logo-eua.png);
 }
 
 .logo {
-    width: 73px;
+    width: 72.547px;
     height: 80px;
 }
 
@@ -129,7 +118,7 @@ a.US::before {
     width: 0%;
     height: 1px;
     background: transparent;
-    box-shadow: 0px 1px 6.2px 0px #8B55FF, 0px -1px 1px 0px rgba(189, 0, 255, 0.28) inset;
+    box-shadow: 0px 1px 6.2px 0px #4400ff, 0px -1px 1px 0px #2e00ad inset;
     left: 0%;
     bottom: -3px;
     transition: all 0.5s ease-in-out;
@@ -140,15 +129,15 @@ a.US::before {
     width: 100%;
     left: 0px;
     visibility: visible;
-    background: #8B55FF;
-    box-shadow: 0px 1px 6.2px 0px #8B55FF, 0px -1px 1px 0px rgba(189, 0, 255, 0.28) inset,
-        0px 0px 10px 2px #8B55FF;
+    background: #4400ff;
+    box-shadow: 0px 1px 6.2px 0px #2e00ad, 0px -1px 1px 0px #4400ff inset,
+        0px 0px 10px 2px #4400ff;
 }
 
 .navbar-list {
-    list-style: none;
     display: flex;
-    gap: 79px;
+    list-style: none;
+    gap: 58px;
 }
 
 .navbar-list a {
@@ -161,7 +150,7 @@ a.US::before {
 }
 
 footer {
-    color: #d9d9d9;
+    color: #efe1ff;
     text-align: center;
     font-family: Kanit;
     font-size: 13px;
@@ -170,7 +159,7 @@ footer {
 
 footer a {
     text-decoration: none;
-    color: #FFF;
+    color: #c1acd4;
     font-family: Kanit;
     font-size: 15px;
     font-weight: 300;
@@ -179,4 +168,314 @@ footer a {
 footer a:hover {
     color: rgb(219, 192, 255);
     text-decoration: none;
+}
+
+/* estilização scrollbar */
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #4400ff;
+    border-radius: 10px;
+}
+
+.sobre-mim-name {
+    color: rgb(68, 0, 255);
+    font-family: Kanit;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 35px;
+}
+
+#name {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.sobre-mim-content {
+    display: flex;
+}
+
+.sobre-mim-content img {
+    width: 400px;
+}
+
+.sobre-mim-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sobre-mim-text #title {
+    color: #4400ff;
+    font-family: Kanit;
+    font-size: 40px;
+    font-weight: 400;
+    margin-left: 150px;
+    padding: 14px 0px;
+}
+
+.sobre-mim-text #text {
+    color: #FFF;
+    text-align: justify;
+    font-family: Advent Pro;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2.6px;
+    margin-left: 155px;
+}
+
+.habilidades-header {
+    display: flex;
+    align-items: baseline;
+    gap: 154px;
+    margin: 0px 250px;
+}
+
+.habilidades-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.habilidades-container #title {
+    color: #4400ff;
+    font-family: Kanit;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.habilidades-container #text {
+    color: #FFF;
+    text-align: justify;
+    font-family: Advent Pro;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2.6px;
+    width: 524px;
+}
+
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.box {
+    position: relative;
+    background: #0E0021;
+    box-shadow: 0px 0px 9px 0px #4400ff;
+    width: 130px;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.box img {
+    width: 80px;
+}
+
+.box p {
+    color: #FFF;
+    font-family: Advent Pro;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2.0px;
+}
+
+.projetos-header {
+    background-color: #131313;
+}
+
+.projetos-header #title {
+    color: rgb(68, 0, 255);
+    font-family: Kanit;
+    font-size: 40px;
+    font-weight: 400;
+    padding: 14px 0px;
+}
+
+.projetos-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.project {
+    position: relative;
+    width: 300px;
+}
+
+.project-image {
+    width: 322px;
+    height: 312px;
+    box-shadow: 0px 0px 9px 0px rgb(68, 0, 255);
+}
+
+.project-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2px);
+    width: 322px;
+    height: 312px;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    z-index: 1;
+}
+
+.project-details h3 {
+    color: #FFF;
+    font-family: Kanit;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.project-details p {
+    color: #FFF;
+    font-family: Kanit;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.project-details a {
+    color: rgb(68, 0, 255);
+    text-align: center;
+    font-feature-settings: 'liga' off;
+    font-family: Kanit;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.project:hover .project-details {
+    opacity: 1;
+}
+
+.read-more {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 200px;
+    text-align: center;
+}
+
+.close-popup {
+    display: block;
+    margin-top: 10px;
+    color: #00f;
+    text-decoration: none;
+}
+
+.contatos-container img {
+    aspect-ratio: 1;
+    width: 40px;
+    height: 40px;
+}
+
+/* 
+.contatos-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+} */
+
+.contatos-container {
+    position: relative;
+}
+
+#mensagemCard {
+    position: fixed;
+    display: none;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0d0424;
+    border: 2px solid rgb(68, 0, 255);
+    padding: 7px;
+    color: white;
+    font-family: kanit;
+    font-size: 15px;
+    font-weight: 300;
+    z-index: 1;
+    transition: ease-in-out 1.5s;
+    border-radius: 5px;
+}
+
+.contatos-content {
+    display: flex;
+    gap: 30px;
+    margin-left: 155px;
+    padding-top: 25px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#sobre-mim {
+    padding: 80px 0px;
+    background-color: #131313;
+}
+
+#habilidades {
+    padding: 150px 0px;
+}
+
+#projetos {
+    padding: 120px 0px;
+}
+
+#contatos {
+    padding: 150px 0px;
+}
+
+.grid-layout {
+    /* max-width: 1140px; */
+    margin: 0px 250px;
+}
+
+.contatos-test {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+#emailImage {
+    height: 35px;
 }

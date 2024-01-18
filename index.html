@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Davi Wesley</title>
     <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="/components/logo.png">
 </head>
 
 <body>
@@ -13,26 +14,157 @@
         <nav class="navbar-group">
             <img src="/components/logo.png" alt="Logo DaviCode" class="logo">
             <ul class="navbar-list">
-                <li class="navbar-text"><a href="/">Sobre mim</a></li>
-                <li class="navbar-text"><a href="/">Habilidades</a></li>
-                <li class="navbar-text"><a href="/">Projetos</a></li>
-                <li class="navbar-text"><a href="/">Contatos</a></li>
+                <li class="navbar-text"><a href="#sobre-mim">Sobre mim</a></li>
+                <li class="navbar-text"><a href="#habilidades">Habilidades</a></li>
+                <li class="navbar-text"><a href="#projetos">Projetos</a></li>
+                <div class="language">
+                    <div class="language-selected"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="9"
+                            viewBox="0 0 16 9" fill="none">
+                            <path d="M1.19238 1.5L8.6458 7.5L14.6085 1.5" stroke="#4901A5" stroke-width="2" />
+                        </svg></div>
+                    <ul class="language-selected-position">
+                        <li><a href="/" class="BR">Português</a></li>
+                        <li><a href="/" class="US english">Inglês</a></li>
+                    </ul>
+                </div>
             </ul>
-            <!-- <div class="language">
-                <div class="language-selected"></div>
-                <ul>
-                    <li><a href="/" class="BR">Português</a></li>
-                    <li><a href="/" class="US english">Inglês</a></li>
-                </ul>
-            </div> -->
         </nav>
     </header>
 
     <main>
+        <section id="sobre-mim" class="sobre-mim-header">
+            <div class="grid-layout">
+                <div class="sobre-mim-name">
+                    <p>Hi, i'm</p>
+                    <p id="name">Davi Wesley</p>
+                </div>
+                <div class="sobre-mim-content">
+                    <div><img src="/components/eu.jpg" alt="Cartoon Davi Wesley"></div>
+                    <div class="sobre-mim-text">
+                        <p id="title">Sobre mim</p>
+                        <p id="text">Desenvolvedor Front-End, atualmente estudando JavaScript, Java e Python. Cursando Ciência da Computação, sou entusiasta da área de tecnologia e busco incessantemente aprimorar e expandir meus conhecimentos.
+                        <div class="contatos-container">
+                            <div class="contatos-content">
+                                <a href="#" onclick="copiarEmailParaAreaTransferencia(event)"><img id="emailImage" src="/components/logo-email.png" alt="Logo Email"></a>
+                                <div id="mensagemCard">E-mail copiado para a área de transferência.</div>
+                                <a href="https://www.linkedin.com/in/daviwesleym/" target="_blank"><img src="/components/logo-linkedin.png" alt="Logo Linkedin"></a>
+                                <a href="https://github.com/offdavicode" target="_blank"><img src="/components/logo-github.png" alt="Logo GitHub"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section id="habilidades" class="habilidades-header">
+            <div class="habilidades-container">
+                <h2 id="title">Habilidades</h2>
+                <p id="text">*passe o mouse para ler mais sobre cada linguagem.*</p>
+            </div>
+
+            <div class="box-container">
+                <div class="box">
+                    <p>HTML</p>
+                    <img src="/components/logo-html.png" alt="html">
+                </div>
+                <div class="box">
+                    <p>CSS</p>
+                    <img src="/components/logo-css.png" alt="css">
+                </div>
+                <div class="box">
+                    <p>JAVASCRIPT</p>
+                    <img src="/components/logo-javascript.png" alt="javascript">
+                </div>
+                <div class="box">
+                    <p>JAVA</p>
+                    <img src="/components/logo-java.png" alt="java">
+                </div>
+                <div class="box">
+                    <p>PYTHON</p>
+                    <img src="/components/logo-python.png" alt="python">
+                </div>
+            </div>
+        </section>
+        <div id="projetos" class="projetos-header" data-aos="init-hidden-off">
+            <div class="grid-layout">
+                <div class="projetos-container">
+                    <h2 id="title">Projetos (em desenvolvimento)</h2>
+                    <div class="projetos-content">
+                        <div class="project">
+                            <img src="https://i.pinimg.com/originals/21/11/61/21116158daaeb1459b4ec0758505e1ad.gif"
+                                alt="Nome do Projeto" class="project-image">
+                            <div class="project-details" id="projectDetails">
+                                <h3>Nome do Projeto</h3>
+                                <p>Descrição breve do projeto.</p>
+                                <a href="#" class="read-more" onclick="showPopup(event)">LEIA MAIS</a>
+                            </div>
+                        </div>
+                        <div class="popup" id="popup">
+                            <div class="popup-content">
+                                <h2>Detalhes do Projeto</h2>
+                                <p>Descrição completa do projeto.</p>
+                                <a href="#" class="close-popup" onclick="hidePopup()">Fechar</a>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <img src="https://i.pinimg.com/originals/21/11/61/21116158daaeb1459b4ec0758505e1ad.gif"
+                                alt="Nome do Projeto" class="project-image">
+                            <div class="project-details" id="projectDetails">
+                                <h3>Nome do Projeto</h3>
+                                <p>Descrição breve do projeto.</p>
+                                <a href="#" class="read-more" onclick="showPopup(event)">LEIA MAIS</a>
+                            </div>
+                        </div>
+
+                        <div class="popup" id="popup">
+                            <div class="popup-content">
+                                <h2>Detalhes do Projeto</h2>
+                                <p>Descrição completa do projeto.</p>
+                                <a href="#" class="close-popup" onclick="hidePopup()">Fechar</a>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <img src="https://i.pinimg.com/originals/21/11/61/21116158daaeb1459b4ec0758505e1ad.gif"
+                                alt="Nome do Projeto" class="project-image">
+                            <div class="project-details" id="projectDetails">
+                                <h3>Nome do Projeto</h3>
+                                <p>Descrição breve do projeto.</p>
+                                <a href="#" class="read-more" onclick="showPopup(event)">LEIA MAIS</a>
+                            </div>
+                        </div>
+
+                        <div class="popup" id="popup">
+                            <div class="popup-content">
+                                <h2>Detalhes do Projeto</h2>
+                                <p>Descrição completa do projeto.</p>
+                                <a href="#" class="close-popup" onclick="hidePopup()">Fechar</a>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <img src="https://i.pinimg.com/originals/21/11/61/21116158daaeb1459b4ec0758505e1ad.gif"
+                                alt="Nome do Projeto" class="project-image">
+                            <div class="project-details" id="projectDetails">
+                                <h3>Nome do Projeto</h3>
+                                <p>Descrição breve do projeto.</p>
+                                <a href="#" class="read-more" onclick="showPopup(event)">LEIA MAIS</a>
+                            </div>
+                        </div>
+
+                        <div class="popup" id="popup">
+                            <div class="popup-content">
+                                <h2>Detalhes do Projeto</h2>
+                                <p>Descrição completa do projeto.</p>
+                                <a href="#" class="close-popup" onclick="hidePopup()">Fechar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
-            <p>portfólio desenvolvido por <a target="_blank" href="https://www.linkedin.com/in/daviwesleym">Davi Wesley</a></p>
+        <p>portfólio desenvolvido por <a target="_blank" href="https://www.linkedin.com/in/daviwesleym">Davi Wesley</a>
+        </p>
+        <p>**portfólio ainda em desenvolvimento, podendo ter alguns bugs e/ou falta de informações**</p>
     </footer>
     <script src="/script.js"></script>
 </body>
