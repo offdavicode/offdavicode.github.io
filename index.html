@@ -42,47 +42,62 @@
                     <div><img src="/components/eu.jpg" alt="Cartoon Davi Wesley"></div>
                     <div class="sobre-mim-text">
                         <p id="title">Sobre mim</p>
-                        <p id="text">Web Developer, atualmente estudando JavaScript, Java e Python. Cursando Ciência da Computação, sou entusiasta da área de tecnologia e busco incessantemente aprimorar e expandir meus conhecimentos.
+                        <p id="text">Web Developer, atualmente estudando JavaScript, Java e Python. Cursando Ciência da
+                            Computação, sou entusiasta da área de tecnologia e busco incessantemente aprimorar e
+                            expandir meus conhecimentos.
                         <div class="contatos-container">
                             <div class="contatos-content">
-                                <a href="#" onclick="copiarEmailParaAreaTransferencia(event)"><img id="emailImage" src="/components/logo-email.png" alt="Logo Email"></a>
+                                <a href="#" onclick="copiarEmailParaAreaTransferencia(event)"><img id="emailImage"
+                                        src="/components/logo-email.png" alt="Logo Email"></a>
                                 <div id="mensagemCard">E-mail copiado para a área de transferência.</div>
-                                <a href="https://www.linkedin.com/in/daviwesleym/" target="_blank"><img src="/components/logo-linkedin.png" alt="Logo Linkedin"></a>
-                                <a href="https://github.com/offdavicode" target="_blank"><img src="/components/logo-github.png" alt="Logo GitHub"></a>
+                                <a href="https://www.linkedin.com/in/daviwesleym/" target="_blank"><img
+                                        src="/components/logo-linkedin.png" alt="Logo Linkedin"></a>
+                                <a href="https://github.com/offdavicode" target="_blank"><img
+                                        src="/components/logo-github.png" alt="Logo GitHub"></a>
                             </div>
                         </div>
                     </div>
                 </div>
         </section>
-<section id="habilidades" class="habilidades-header">
-    <div class="habilidades-container">
-        <h2 id="title">Habilidades</h2>
-        <p id="text-1">*passe o mouse para ler mais sobre cada linguagem.*</p>
-    </div>
+        <section id="habilidades" class="habilidades-header">
+            <div class="habilidades-container">
+                <h2 id="title">Habilidades</h2>
+                <p id="text-1">*passe o mouse para ler mais sobre cada linguagem.*</p>
+            </div>
+            <div class="box-container">
+                <div class="box" onmouseover="changeText(this)"
+                    data-text="HTML é a linguagem de marcação fundamental para criar páginas web. Utilizado para estruturar conteúdo, utiliza tags para definir elementos como cabeçalho, parágrafos e links, permitindo a construção de páginas interativas na internet."
+                    onmouseout="restoreText()">
+                    <p>HTML</p>
+                    <img src="/components/logo-html.png" alt="html">
+                </div>
+                <div class="box" onmouseover="changeText(this)"
+                    data-text="CSS é essencial para o design de páginas web. Combinado com HTML, permite a estilização e formatação de elementos, proporcionando controle sobre cores, layout e fontes para criar interfaces atraentes e consistentes."
+                    onmouseout="restoreText()">
+                    <p>CSS</p>
+                    <img src="/components/logo-css.png" alt="css">
+                </div>
+                <div class="box" onmouseover="changeText(this)"
+                    data-text="JavaScript é uma linguagem de programação essencial para o desenvolvimento web. Executada no navegador do usuário, ela permite a criação de interatividade dinâmica em páginas, facilitando a construção de experiências mais dinâmicas e envolventes na internet."
+                    onmouseout="restoreText()">
+                    <p>JAVASCRIPT</p>
+                    <img src="/components/logo-javascript.png" alt="javascript">
+                </div>
+                <div class="box" onmouseover="changeText(this)"
+                    data-text="Java é uma poderosa linguagem de programação multiplataforma. Reconhecida pela sua portabilidade e versatilidade, é amplamente utilizada no desenvolvimento de aplicativos, desde aplicações web até sistemas empresariais robustos."
+                    onmouseout="restoreText()">
+                    <p>JAVA</p>
+                    <img src="/components/logo-java.png" alt="java">
+                </div>
+                <div class="box" onmouseover="changeText(this)"
+                    data-text="Python é uma linguagem de programação de alto nível, conhecida por sua sintaxe clara e legibilidade. Amplamente utilizada em desenvolvimento de software, análise de dados e automação, Python é apreciada por sua versatilidade e vasta comunidade de suporte."
+                    onmouseout="restoreText()">
+                    <p>PYTHON</p>
+                    <img src="/components/logo-python.png" alt="python">
+                </div>
+            </div>
 
-    <div class="box-container">
-        <div class="box" onmouseover="changeText(this)" data-text="HTML é a linguagem de marcação fundamental para criar páginas web. Utilizado para estruturar conteúdo, utiliza tags para definir elementos como cabeçalho, parágrafos e links, permitindo a construção de páginas interativas na internet." onmouseout="restoreText()">
-            <p>HTML</p>
-            <img src="/components/logo-html.png" alt="html">
-        </div>
-        <div class="box" onmouseover="changeText(this)" data-text="CSS é essencial para o design de páginas web. Combinado com HTML, permite a estilização e formatação de elementos, proporcionando controle sobre cores, layout e fontes para criar interfaces atraentes e consistentes." onmouseout="restoreText()">
-            <p>CSS</p>
-            <img src="/components/logo-css.png" alt="css">
-        </div>
-        <div class="box" onmouseover="changeText(this)" data-text="JavaScript é uma linguagem de programação essencial para o desenvolvimento web. Executada no navegador do usuário, ela permite a criação de interatividade dinâmica em páginas, facilitando a construção de experiências mais dinâmicas e envolventes na internet." onmouseout="restoreText()">
-            <p>JAVASCRIPT</p>
-            <img src="/components/logo-javascript.png" alt="javascript">
-        </div>
-        <div class="box" onmouseover="changeText(this)" data-text="Java é uma poderosa linguagem de programação multiplataforma. Reconhecida pela sua portabilidade e versatilidade, é amplamente utilizada no desenvolvimento de aplicativos, desde aplicações web até sistemas empresariais robustos." onmouseout="restoreText()">
-            <p>JAVA</p>
-            <img src="/components/logo-java.png" alt="java">
-        </div>
-        <div class="box" onmouseover="changeText(this)" data-text="Python é uma linguagem de programação de alto nível, conhecida por sua sintaxe clara e legibilidade. Amplamente utilizada em desenvolvimento de software, análise de dados e automação, Python é apreciada por sua versatilidade e vasta comunidade de suporte." onmouseout="restoreText()">
-            <p>PYTHON</p>
-            <img src="/components/logo-python.png" alt="python">
-        </div>
-    </div>
-</section>
+        </section>
         <div id="projetos" class="projetos-header" data-aos="init-hidden-off">
             <div class="grid-layout">
                 <div class="projetos-container">

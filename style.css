@@ -14,7 +14,7 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 10vh;
-    margin: 0 138px;
+    margin: 0 8%;
 }
 
 
@@ -209,6 +209,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-left: 12%;
 }
 
 .sobre-mim-text #title {
@@ -216,7 +217,6 @@ body::-webkit-scrollbar-thumb {
     font-family: Kanit;
     font-size: 40px;
     font-weight: 400;
-    margin-left: 150px;
     padding: 14px 0px;
 }
 
@@ -227,14 +227,13 @@ body::-webkit-scrollbar-thumb {
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 2.6px;
-    margin-left: 155px;
 }
 
 .habilidades-header {
     display: flex;
     align-items: baseline;
     gap: 154px;
-    margin: 0px 250px;
+    margin: 0% 10%;
 }
 
 .habilidades-container {
@@ -263,6 +262,7 @@ body::-webkit-scrollbar-thumb {
 .box-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 20px;
 }
 
@@ -439,9 +439,7 @@ body::-webkit-scrollbar-thumb {
 .contatos-content {
     display: flex;
     gap: 30px;
-    margin-left: 155px;
     padding-top: 25px;
-    align-content: center;
     align-items: center;
     justify-content: center;
 }
@@ -465,7 +463,7 @@ body::-webkit-scrollbar-thumb {
 
 .grid-layout {
     /* max-width: 1140px; */
-    margin: 0px 250px;
+    margin: 0% 8%;
 }
 
 .contatos-test {
@@ -478,4 +476,234 @@ body::-webkit-scrollbar-thumb {
 
 #emailImage {
     height: 35px;
+}
+
+@media(max-width:1200px) {
+    .habilidades-header {
+        display: block;
+        margin: 0% 10%;
+    }
+
+    .box-container {
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .box {
+        width: 100px;
+    }
+
+    .box img {
+        width: 80px;
+    }
+
+    .sobre-mim-content img {
+        width: 350px;
+    }
+
+    .contatos-container img {
+        aspect-ratio: 1;
+        width: 40px;
+        height: 40px;
+    }
+
+    #text-1 {
+        width: auto;
+    }
+
+    .habilidades-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projetos-content {
+        justify-content: space-evenly;
+        gap: 55px;
+    }
+}
+
+
+@media(max-width:780px) {
+    .box {
+        width: 95px;
+    }
+
+    .projetos-header #title {
+        text-align: center;
+    }
+
+    .sobre-mim-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sobre-mim-name {
+        text-align: center;
+    }
+
+    .sobre-mim-text {
+        display: flex;
+        margin: 0 2% 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sobre-mim-content img {
+        width: 300px;
+    }
+
+
+    .box-container {
+        padding-top: 40px;
+    }
+
+    .contatos-container img {
+        aspect-ratio: 1;
+        width: 35px;
+        height: 35px;
+    }
+
+    .projetos-content {
+        gap: 15px;
+    }
+
+    .project-details {
+        width: 282px;
+        height: 292px;
+
+    }
+
+    .project-image {
+        width: 282px;
+        height: 292px;
+        box-shadow: 0px 0px 9px 0px rgb(68, 0, 255);
+    }
+}
+
+@media(max-width:693px) {
+    .navbar-list {
+        gap: 30px;
+    }
+
+    .logo {
+        width: 62.547px;
+        height: 70px;
+        aspect-ratio: 1;
+    }
+
+    .habilidades-header {
+        display: block;
+        margin: 0% 10%;
+    }
+
+    .box-container {
+        padding-top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+
+    .box {
+        width: 90px;
+    }
+
+    .box img {
+        width: 70px;
+    }
+
+    .sobre-mim-content img {
+        width: 300px;
+    }
+
+    .contatos-container img {
+        aspect-ratio: 1;
+        width: 40px;
+        height: 40px;
+    }
+
+    #text-1 {
+        width: auto;
+    }
+
+    .habilidades-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projetos-content {
+        justify-content: space-evenly;
+        gap: 55px;
+    }
+}
+
+@media(max-width:425px) {
+    .navbar-list {
+        gap: 20px;
+    }
+
+    .logo {
+        width: 52.547px;
+        height: 60px;
+        aspect-ratio: 1;
+    }
+
+    .habilidades-header {
+        display: block;
+        margin: 0% 10%;
+    }
+
+    .box-container {
+        padding-top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .box {
+        width: 90px;
+    }
+
+    .box img {
+        width: 70px;
+    }
+
+    .sobre-mim-content img {
+        width: 250px;
+    }
+
+    .contatos-container img {
+        aspect-ratio: 1;
+        width: 30px;
+        height: 30px;
+    }
+
+    #emailImage {
+        height: 28px;
+    }
+
+    #habilidades {
+        padding: 100px 0px;
+    }
+
+    .sobre-mim-text #title {
+        font-size: 30px;
+    }
+
+    .projetos-header #title {
+        font-size: 30px;
+    }
+
+    .habilidades-container #title {
+        font-size: 30px;
+    }
 }
