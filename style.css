@@ -614,7 +614,9 @@ body::-webkit-scrollbar-thumb {
         flex-direction: row;
     }
 
-
+    .box p {
+        font-size: 12px;
+    }
     .box {
         width: 70px;
     }
@@ -672,14 +674,19 @@ body::-webkit-scrollbar-thumb {
         align-items: center;
         flex-wrap: wrap;
         flex-direction: row;
+        gap: 10px;
     }
 
     .box {
-        width: 60px;
+        width: 65px;
     }
 
     .box img {
         width: 50px;
+    }
+
+    .box p {
+        font-size: 10px;
     }
 
     .sobre-mim-content img {
@@ -715,7 +722,7 @@ body::-webkit-scrollbar-thumb {
 
 @media(max-width:375px) {
     .box {
-        width: 50px;
+        width: 60px;
     }
 
     .box img {
@@ -725,11 +732,15 @@ body::-webkit-scrollbar-thumb {
     .box p {
         font-size: 10px;
     }
+
+    .box-container {
+        gap: 5px;
+    }
 }
 
 @media(max-width:320px) {
     .box {
-        width: 45px;
+        width: 55px;
     }
 
     .box img {
@@ -742,5 +753,9 @@ body::-webkit-scrollbar-thumb {
 
     .box img {
         width: 40px;
+    }
+
+    .box-container {
+        gap: 5px;
     }
 }
