@@ -485,6 +485,7 @@ body::-webkit-scrollbar-thumb {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 15px;
     }
 
     .box {
@@ -562,7 +563,7 @@ body::-webkit-scrollbar-thumb {
 
 
     .box-container {
-        padding-top: 40px;
+        padding-top: 20px;
     }
 
     .contatos-container img {
@@ -615,11 +616,11 @@ body::-webkit-scrollbar-thumb {
 
 
     .box {
-        width: 90px;
+        width: 70px;
     }
 
     .box img {
-        width: 55px;
+        width: 70px;
     }
 
     .sobre-mim-content img {
@@ -674,7 +675,7 @@ body::-webkit-scrollbar-thumb {
     }
 
     .box {
-        width: 90px;
+        width: 60px;
     }
 
     .box img {
@@ -709,5 +710,37 @@ body::-webkit-scrollbar-thumb {
 
     .habilidades-container #title {
         font-size: 30px;
+    }
+}
+
+@media(max-width:375px) {
+    .box {
+        width: 50px;
+    }
+
+    .box img {
+        width: 45px;
+    }
+
+    .box p {
+        font-size: 10px;
+    }
+}
+
+@media(max-width:320px) {
+    .box {
+        width: 45px;
+    }
+
+    .box img {
+        width: 40px;
+    }
+
+    .box p {
+        font-size: 8px;
+    }
+
+    .box img {
+        width: 40px;
     }
 }
