@@ -21,13 +21,13 @@ React, TypeScript, TailwindCSS
 Clone o projeto
 
 ```bash
-  git clone https://link-para-o-projeto
+  git clone https://github.com/offdavicode/offdavicode.github.io
 ```
 
 Entre no diretório do projeto
 
 ```bash
-  cd my-project
+  cd offdavicode.github.io
 ```
 
 Instale as dependências
@@ -39,5 +39,5 @@ Instale as dependências
 Inicie o servidor
 
 ```bash
-  npm run start
+  npm run dev
 ```
