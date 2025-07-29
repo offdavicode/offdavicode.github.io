@@ -10,10 +10,7 @@ function Contato() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -22,84 +19,69 @@ function Contato() {
   };
 
   return (
-    <section id='contato'>
-      <div className='flex flex-col gap-4 items-center justify-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24 py-14 font-Inter text-white text-center grow bg-gray-950'>
-        <div className='flex pb-8'>
-          <h1 className='text-2xl sm:text-3xl md:text-4xl font-extrabold'>Entre em contato!</h1>
-        </div>
+    <section id="contato">
+      <div className="flex flex-col items-center justify-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24 py-14 font-Inter text-white text-center bg-gray-950">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold pb-12">
+          Entre em contato!
+        </h1>
 
-        <div className='flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-24 w-full'>
-          <div className='flex flex-col gap-4 text-indigo-600 justify-center items-start'>
-            <div className='flex flex-col gap-2'>
-              <div className='flex items-center gap-4'>
-                <Mail size={32} />
-                <div className='flex items-start justify-center flex-col'>
-                  <p className='text-lg sm:text-xl font-bold text-indigo-50'>Email</p>
-                  <a className='hover:text-indigo-700 transition-all duration-200' href="mailto:contato.daviwmpereira@gmail.com">
-                    <p className='text-gray-400 font-light text-base'>contato.daviwmpereira@gmail.com</p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-x-24 w-full max-w-7xl items-center">
+          <div className="flex flex-col gap-8 text-indigo-600 w-full">
+            {[{
+              Icon: Mail,
+              title: 'Email',
+              content: 'contato.daviwmpereira@gmail.com',
+              link: 'mailto:contato.daviwmpereira@gmail.com'
+            }, {
+              Icon: Linkedin,
+              title: 'LinkedIn',
+              content: 'Davi Wesley',
+              link: 'https://www.linkedin.com/in/daviwesleym/'
+            }, {
+              Icon: Github,
+              title: 'GitHub',
+              content: 'Offdavicode',
+              link: 'https://github.com/Offdavicode'
+            }].map(({ Icon, title, content, link }) => (
+              <div key={title} className="flex items-start gap-4">
+                <Icon size={32} />
+                <div className="flex flex-col items-start">
+                  <p className="text-lg sm:text-xl font-bold text-indigo-50">{title}</p>
+                  <a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-indigo-400 text-gray-400 text-sm sm:text-base font-light transition-all"
+                  >
+                    {content}
                   </a>
                 </div>
               </div>
-            </div>
-            <div className='flex flex-col gap-2'>
-              <div className='flex items-center gap-4'>
-                <Linkedin size={32} />
-                <div className='flex items-start justify-center flex-col'>
-                  <p className='text-lg sm:text-xl font-bold text-indigo-50'>Linkedin</p>
-                  <a className='hover:text-indigo-700 transition-all duration-200' href="https://www.linkedin.com/in/davi-wesley">
-                    <p className='text-gray-400 font-light text-base'>Davi Wesley</p>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className='flex flex-col gap-2'>
-              <div className='flex items-center gap-4'>
-                <Github size={32} />
-                <div className='flex items-start justify-center flex-col'>
-                  <p className='text-lg sm:text-xl font-bold text-indigo-50'>GitHub</p>
-                  <a className='hover:text-indigo-700 transition-all duration-200' href="https://github.com/Offdavicode">
-                    <p className='text-gray-400 font-light text-base'>Offdavicode</p>
-                  </a>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
-          <form onSubmit={handleSubmit} className="flex flex-col items-start justify-center gap-4 w-full max-w-lg">
-            <label className='flex text-lg sm:text-xl' htmlFor="name">Nome</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="shadow-fav flex bg-gray-800 p-3 text-sm sm:text-base flex-1 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            />
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
+            {[{ id: 'name', label: 'Nome', type: 'text' }, { id: 'email', label: 'Email', type: 'email' }].map(
+              ({ id, label, type }) => (
+                <div key={id} className="w-full flex flex-col gap-2">
+                  <label htmlFor={id} className="text-left text-lg sm:text-xl">
+                    {label}
+                  </label>
+                  <input type={type} id={id} name={id} value={formData[id as keyof typeof formData]}
+                    onChange={handleChange} required className="shadow-fav bg-gray-800 p-3 text-sm sm:text-base w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                </div>
+              )
+            )}
 
-            <label className='flex text-lg sm:text-xl' htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="shadow-fav flex bg-gray-800 p-3 text-sm sm:text-base flex-1 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            />
+            <div className="w-full flex flex-col gap-2">
+              <label htmlFor="message" className="text-left text-lg sm:text-xl">
+                Mensagem
+              </label>
+              <textarea id="message" name="message" value={formData.message}
+                onChange={handleChange} rows={5} required className="shadow-fav bg-gray-800 p-3 text-sm sm:text-base w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            </div>
 
-            <label className='flex text-lg sm:text-xl' htmlFor="message">Mensagem</label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows={4}
-              className="shadow-fav flex bg-gray-800 p-3 text-sm sm:text-base flex-1 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            />
-
-            <button
-              type="submit"
-              className="flex gap-2 mt-4 p-3 bg-indigo-600 justify-center items-center rounded-lg hover:bg-indigo-700 transition-all duration-200 shadow-fav w-full"
-            >
+            <button type="submit" className="mt-4 p-3 bg-indigo-600 w-full rounded-lg hover:bg-indigo-700 transition-all duration-200 shadow-fav text-white font-medium">
               Enviar
             </button>
           </form>
