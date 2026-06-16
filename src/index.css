@@ -2,63 +2,185 @@
 @tailwind components;
 @tailwind utilities;
 
-.background-core {
-  background-image: radial-gradient(hsl(200, 40%, 14%), hsl(220, 14%, 10%) 60%);
-}
-
-
-.background-animate {
-  background-size: 400%;
-
-  -webkit-animation: AnimationName 15s ease infinite;
-  -moz-animation: AnimationName 15s ease infinite;
-  animation: AnimationName 15s ease infinite;
-}
-
-@keyframes AnimationName {
-
-  0%,
-  100% {
-    background-position: 0% 50%;
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
-  50% {
-    background-position: 100% 50%;
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FDF6EC;
+    color: #2D2A3E;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #A78BFA;
+    color: white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
   }
 }
 
+@layer components {
+  .cartoon-card {
+    @apply bg-white rounded-[20px] transition-all duration-300;
+    border: 2.5px solid #E9E0D4;
+    box-shadow: 4px 4px 0px 0px rgba(124, 58, 237, 0.12);
+  }
 
-.container {
-  background: lightblue;
-  cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39,
-    auto;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  justify-content: center;
+  .cartoon-card:hover {
+    transform: translateY(-4px);
+    border-color: #A78BFA;
+    box-shadow: 8px 8px 0px 0px rgba(124, 58, 237, 0.2);
+  }
+
+  .cartoon-btn {
+    @apply inline-flex items-center gap-2 font-outfit font-semibold px-8 py-3.5 rounded-full text-white transition-all duration-200;
+    background: #7C3AED;
+    border: 3px solid #5B21B6;
+    box-shadow: 4px 4px 0px 0px #5B21B6;
+  }
+
+  .cartoon-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px #5B21B6;
+    background: #6D28D9;
+  }
+
+  .cartoon-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px 0px #5B21B6;
+  }
+
+  .cartoon-btn-outline {
+    @apply inline-flex items-center gap-2 font-outfit font-semibold px-8 py-3.5 rounded-full transition-all duration-200;
+    background: white;
+    color: #7C3AED;
+    border: 3px solid #7C3AED;
+    box-shadow: 4px 4px 0px 0px rgba(124, 58, 237, 0.2);
+  }
+
+  .cartoon-btn-outline:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px rgba(124, 58, 237, 0.3);
+    background: #F5F0FF;
+  }
+
+  .cartoon-input {
+    @apply w-full px-5 py-3.5 rounded-2xl font-inter text-sm transition-all duration-300;
+    background: white;
+    border: 2.5px solid #E9E0D4;
+    color: #2D2A3E;
+  }
+
+  .cartoon-input:focus {
+    outline: none;
+    border-color: #7C3AED;
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+  }
+
+  .cartoon-input::placeholder {
+    color: #A89F91;
+  }
+
+  .skill-badge {
+    @apply inline-flex items-center gap-2.5 px-5 py-3 rounded-full font-outfit font-medium text-sm transition-all duration-300;
+    background: white;
+    border: 2.5px solid #E9E0D4;
+    color: #2D2A3E;
+    cursor: default;
+  }
+
+  .skill-badge:hover {
+    border-color: #A78BFA;
+    background: #F5F0FF;
+    transform: translateY(-3px) rotate(-1deg);
+    box-shadow: 4px 4px 0px 0px rgba(124, 58, 237, 0.15);
+  }
+
+  .social-icon {
+    @apply p-3 rounded-full bg-white transition-all duration-300;
+    border: 2.5px solid #E9E0D4;
+  }
+
+  .social-icon:hover {
+    border-color: #A78BFA;
+    transform: translateY(-3px);
+    box-shadow: 3px 3px 0px 0px rgba(124, 58, 237, 0.15);
+  }
+
+  .section-cream {
+    @apply bg-cream;
+  }
+
+  .section-beige {
+    background-color: #F5EDE0;
+  }
+
+  .wavy-divider {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .wavy-divider svg {
+    width: 100%;
+    height: 50px;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .wavy-divider svg {
+      height: 70px;
+    }
+  }
 }
 
-.deck {
-  position: absolute;
-  width: 300px;
-  height: 200px;
-  will-change: transform;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  touch-action: none;
+.toast {
+  @apply fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-6 py-3 rounded-full font-outfit font-medium text-sm text-white;
+  animation: toastIn 0.4s ease, toastOut 0.4s ease 2.6s forwards;
 }
 
-.deck>div {
-  background-color: white;
-  background-size: auto 85%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 45vh;
-  max-width: 150px;
-  height: 85vh;
-  max-height: 285px;
-  will-change: transform;
-  border-radius: 10px;
-  box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
+.toast-success {
+  background: #7C3AED;
+  border: 2px solid #5B21B6;
+  box-shadow: 3px 3px 0px 0px #5B21B6;
+}
+
+.toast-error {
+  background: #EF4444;
+  border: 2px solid #DC2626;
+  box-shadow: 3px 3px 0px 0px #DC2626;
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes toastOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
 }

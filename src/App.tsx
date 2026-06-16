@@ -1,24 +1,27 @@
-import Footer from './components/Footer'
+import { LanguageProvider } from './i18n'
 import Header from './components/Header'
-import Inicial from './components/Inicial'
-import Projetos from './components/Projetos'
-import SobreMim from './components/SobreMim'
-import Habilidades from './components/Habilidades'
+import Hero from './components/Hero'
+import About from './components/About'
+import Skills from './components/Skills'
+import Projects from './components/Projects'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
 import './index.css'
-import Contato from './components/Contato'
 
-function Home() {
+function App() {
   return (
-    <div className=' flex flex-col font-Inter selection:bg-[rgb(129,140,248)] selection:text-white'>
-      <Header />
-      <Inicial />
-      <SobreMim />
-      <Habilidades />
-      <Projetos />
-      <Contato />
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="flex flex-col font-inter">
+        <Header />
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
+    </LanguageProvider>
   )
 }
 
-export default Home
+export default App

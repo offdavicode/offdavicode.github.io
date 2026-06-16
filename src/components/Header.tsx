@@ -1,58 +1,103 @@
-import { Menu, X } from 'lucide-react';
-import '../index.css';
 import { useState } from 'react';
-import { Link } from 'react-scroll';
+import { useLanguage } from '../i18n';
 
-function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+export default function Header() {
+  const { t, language, toggleLanguage } = useLanguage();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const navItems = [
+    { label: t.nav.about, href: '#about' },
+    { label: t.nav.skills, href: '#skills' },
+    { label: t.nav.projects, href: '#projects' },
+    { label: t.nav.contact, href: '#contact' },
+  ];
 
   return (
-    <>
-      <div className="fixed w-full z-10 bg-gray-950/90 backdrop-blur-sm shadow-fav">
+    <header className="fixed top-0 w-full z-50 bg-cream/80 backdrop-blur-md border-b-[2.5px] border-beige">
+      <div className="max-w-6xl mx-auto flex items-center justify-between h-16 px-5 sm:px-8">
+        <a
+          href="#"
+          className="font-outfit font-extrabold text-xl text-primary-dark tracking-tight"
+        >
+          DW<span className="text-primary">.</span>
+        </a>
 
-        <div className="relative flex justify-center">
-          <div className="background-animate absolute -top-16 z-10 mx-auto h-10 w-full max-w-8xl bg-gradient-to-r  from-primary via-indigo-500 to-purple-500 blur-3xl"></div>
-        </div>
-        <div className="flex items-center justify-end sm:justify-center h-20 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24">
+        <nav className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="font-outfit font-medium text-muted hover:text-primary transition-colors duration-200 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2.5px] after:bg-primary after:rounded-full after:transition-all after:duration-300 hover:after:w-full"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
 
-          <button className="sm:hidden text-gray-300 text-2xl" onClick={toggleMenu} aria-label="Menu">
-            {isMenuOpen ? <X /> : <Menu />}
+        <div className="flex items-center gap-3">
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border-[2.5px] border-beige hover:border-primary-light bg-white text-sm font-outfit font-semibold transition-all duration-200 hover:shadow-cartoon"
+            aria-label="Toggle language"
+          >
+            {language === 'en' ? (
+              <>
+                <span>🇧🇷</span>
+                <span className="text-dark">PT</span>
+              </>
+            ) : (
+              <>
+                <span>🇺🇸</span>
+                <span className="text-dark">EN</span>
+              </>
+            )}
           </button>
 
-          <ul className={`flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 lg:gap-10 text-gray-300 ${isMenuOpen ? 'absolute top-20 left-0 w-full items-center justify-start bg-gray-950/90 p-6' : 'hidden sm:flex'}`}>
-            <li>
-              <Link to="sobre-mim" smooth={true} duration={500} offset={-200} className="font-normal hover:font-bold transition-all duration-200" href="#sobre-mim" onClick={() => setIsMenuOpen(false)}>
-                Sobre Mim
-              </Link>
-            </li>
-
-            <li>
-              <Link to="habilidades" smooth={true} duration={500} offset={-200} className="font-normal hover:font-bold transition-all duration-200" href="#habilidades" onClick={() => setIsMenuOpen(false)}>
-                Habilidades
-              </Link>
-            </li>
-
-            <li>
-              <Link to="projetos" smooth={true} duration={500} offset={-80} className="font-normal hover:font-bold transition-all duration-200" href="#projetos" onClick={() => setIsMenuOpen(false)}>
-                Projetos
-              </Link>
-            </li>
-
-            <li>
-              <Link to="contato" smooth={true} duration={500} offset={-80} className="font-normal hover:font-bold transition-all duration-200" href="#contato" onClick={() => setIsMenuOpen(false)}>
-                Contato
-              </Link>
-            </li>
-
-          </ul>
+          <button
+            className="md:hidden text-dark p-1"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <svg
+              width="26"
+              height="26"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            >
+              {menuOpen ? (
+                <>
+                  <path d="M18 6L6 18" />
+                  <path d="M6 6L18 18" />
+                </>
+              ) : (
+                <>
+                  <path d="M3 7h18" />
+                  <path d="M3 12h18" />
+                  <path d="M3 17h18" />
+                </>
+              )}
+            </svg>
+          </button>
         </div>
       </div>
-    </>
+
+      {menuOpen && (
+        <nav className="md:hidden bg-white/95 backdrop-blur-md border-t-[2.5px] border-beige px-6 py-5 flex flex-col gap-1">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={() => setMenuOpen(false)}
+              className="font-outfit font-medium text-muted hover:text-primary hover:bg-primary-50 px-4 py-2.5 rounded-xl transition-all duration-200"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      )}
+    </header>
   );
 }
-
-export default Header;
